@@ -32,6 +32,7 @@ def BFS(graph, vertex):
 
     return visited_ordered
 
+
 def DFS(graph, vertex):
     search_stack = []
     visited_ordered = []
@@ -51,6 +52,7 @@ def DFS(graph, vertex):
             search_stack.insert(len(search_stack), c_vertex)
 
     return visited_ordered
+
 
 def cycle_detect(graph, vertex=None, discovered_set=None, last_vertex=None):
     # recursive solution to cycle detect
@@ -93,9 +95,9 @@ def main():
     main_graph = {'A':['B'], 'B':['A', 'D', 'E'], 'D':['B'], 'E':['B', 'F'], 'F':['E']}
 
     print(cycle_detect(main_graph))
+    # print(cycle_detect({})) | Does not handle empty graph.
 
+    # print(cycle_detect({'A':['A']})) # Does work for pointing at self.
 
-
-
-if __name__=='__main__':
+if __name__ == '__main__':
     main()
